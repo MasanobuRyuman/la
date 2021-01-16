@@ -22,11 +22,33 @@
     </heder>
     <div id="wrap">
         <div class="content">
-            
+            <p><input type="button" value="検索"></p>
+            <input type="button" value="Exec" onclick="OnButtonClick();"/>
+            <p id="la">英語</p>
+            <p id ¥="la2">日本語</p>
+            <textarea cols="40" rows="10"></textarea>
+            <textarea cols="40" rows="10"></textarea>
         </div>
     </div>
     <footer>
     </footer>
+    <script>
+        'use strict';
+        let Record=0
+        function OnButtonClick(){
+            
+            console.log("haitta");
+            if (Record%2==0){
+                document.getElementById("la").textContent="日本語";
+            }
+            if (Record%2!=0){
+                document.getElementById("la").textContent="英語";
+                
+            }
+            Record+=1;
+
+        }
+    </script>
 </body>
  
 </html>
