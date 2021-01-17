@@ -8,7 +8,7 @@
     <title>Mylish</title>
 </head>
 <body>
-    <heder>
+    <header>
         <div class="logo">
             <h1>Mylish</h1>
         </div>
@@ -22,12 +22,12 @@
     </heder>
     <div id="wrap">
         <div class="content">
-            <p><input type="button" value="検索"></p>
-            <input type="button" value="Exec" onclick="OnButtonClick();"/>
+            <button class="change" type="submit" onclick="OnButtonClick()">入れ替え</button>
             <p id="la">英語</p>
-            <p id ¥="la2">日本語</p>
+            <p id="la2">日本語</p>
             <textarea cols="40" rows="10"></textarea>
             <textarea cols="40" rows="10"></textarea>
+            <button class="search" type="submit">検索</button>
         </div>
     </div>
     <footer>
@@ -40,10 +40,11 @@
             console.log("haitta");
             if (Record%2==0){
                 document.getElementById("la").textContent="日本語";
+                document.getElementById("la2").textContent="英語";
             }
             if (Record%2!=0){
                 document.getElementById("la").textContent="英語";
-                
+                document.getElementById("la2").textContent="日本語";
             }
             Record+=1;
 
