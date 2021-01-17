@@ -109,7 +109,8 @@ body {
     margin: 0;
     padding: 0;
     line-height: 2;
-    background-image: url(image/IMG_3499.jpeg);
+    background-image: url(image/white_00080.jpg);
+    background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% auto;
     background-position: center top;
@@ -119,6 +120,11 @@ header {
     widows: 100px;;
     height:170px;
     margin:0 auto;
+    background-image: url(image/blue_00110.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% auto;
+    background-position: center top;
 }
 
 .logo {
@@ -129,7 +135,7 @@ header {
 
 .global-nav {
     float:right;
-    margin-top:-5mm;
+    margin-top:-10mm;
 }
 
 .global-nav li {
@@ -149,12 +155,11 @@ header {
 
 #wrap {
     clear:both;
-    background-color: #ffffff;
-    margin-bottom: 300em;
+    widows: 100%;
 }
 
 .content {
-    width: 960px;
+    width: 100%;
     margin: o auto;
 }
 
@@ -165,9 +170,23 @@ header {
 }
 button.change {
     font-size: 30px;
-    margin-top: 0 auto;
+    margin-top: 2em;
 }
 
 button.search {
     font-size:30px;
+}
+
+#la {
+    font-size: 30px;
+    float: left;
+}
+
+#la2 {
+    font-size: 30px;
+    float: right;
+}
+
+.Input {
+    margin-top: 10em;
 }
