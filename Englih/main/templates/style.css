@@ -104,22 +104,32 @@ input, select {
 }
 
 /*ここから*/
+
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 2;
+    background-image: url(image/IMG_3499.jpeg);
+    background-attachment: fixed;
+    background-size: 100% auto;
+    background-position: center top;
+}
+
 header {
     widows: 100px;;
-    height:150px;
+    height:170px;
     margin:0 auto;
-    background-color: darkgray;
 }
 
 .logo {
     text-align: center;
-    margin-top:1cm;
+    margin-top:0cm;
     font-size: 80px;
 }
 
 .global-nav {
     float:right;
-    margin-top: 40px;
+    margin-top:-5mm;
 }
 
 .global-nav li {
@@ -139,6 +149,8 @@ header {
 
 #wrap {
     clear:both;
+    background-color: #ffffff;
+    margin-bottom: 300em;
 }
 
 .content {
@@ -146,9 +158,14 @@ header {
     margin: o auto;
 }
 
+.changearea {
+    margin-top: 20px;
+    width: 100%;
+    text-align:center;
+}
 button.change {
     font-size: 30px;
-    margin-top: 20px;
+    margin-top: 0 auto;
 }
 
 button.search {
