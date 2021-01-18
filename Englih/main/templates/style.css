@@ -109,7 +109,7 @@ body {
     margin: 0;
     padding: 0;
     line-height: 2;
-    background-image: url(image/white_00080.jpg);
+    background-image: url(image/white_00113.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% auto;
@@ -187,6 +187,22 @@ button.search {
     float: right;
 }
 
-.Input {
-    margin-top: 10em;
+.text {
+    clear: both;
+}
+
+.Input { 
+    display:block;
+    float: left;
+}
+
+.Output {
+    display: block;
+    float: right;
+}
+
+.search {
+    display: block;
+    margin:10em auto;
+
 }
