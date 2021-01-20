@@ -24,6 +24,7 @@
     </heder>
     <div id="wrap">
         <div class="content">
+            <p>{{text}}</p>
 
             <div class="changearea">
                 <button class="change" type="submit" onclick="OnButtonClick()">入れ替え</button>
@@ -31,13 +32,19 @@
 
             <p id="la">英語</p>
             <p id="la2">日本語</p>
-            
-            <div class="text">
-                <p><textarea class="Input" cols="40" rows="10"></textarea></p>
-                <p><textarea class="Output" cols="40" rows="10"></textarea></p>
-            </div>
 
-            <button class="search" type="submit">検索</button>
+            <form action="exercise" method="POST">
+                {% csrf_token %}
+                <div class="text">
+                    <p><textarea class="Input" cols="40" rows="10" name="text_input">{{text_input}}</textarea></p>
+                    <p><textarea class="Output" cols="40" rows="10"></textarea></p>
+                </div>
+
+                <button class="search" type="submit">検索</button>
+
+            </form>
+            
+    
         </div>
     </div>
     <footer>
