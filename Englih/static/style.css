@@ -171,6 +171,7 @@ header {
 button.change {
     font-size: 30px;
     margin-top: 2em;
+    text-align: center;
 }
 
 button.search {
