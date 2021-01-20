@@ -24,20 +24,27 @@
     </heder>
     <div id="wrap">
         <div class="content">
-            <p>{{text}}</p>
 
+            
             <div class="changearea">
-                <button class="change" type="submit" onclick="OnButtonClick()">入れ替え</button>
-            </div>
+                <p><button class="change"  onclick="OnButtonClick()">入れ替え</button></p>
 
-            <p id="la">英語</p>
-            <p id="la2">日本語</p>
+            </div>
+            
+            {% if tolang == "ja" %}
+                <p id="la" name="la">英語</p>
+                <p id="la2" name="la2">日本語</p>
+            {% else %}
+                <p id="la" name="la">日本語</p>
+                <p id="la2" name="la2">英語</p>
+            {% endif %}
 
             <form action="exercise" method="POST">
                 {% csrf_token %}
                 <div class="text">
                     <p><textarea class="Input" cols="40" rows="10" name="text_input">{{text_input}}</textarea></p>
-                    <p><textarea class="Output" cols="40" rows="10"></textarea></p>
+                    <p><textarea class="Output" cols="40" rows="10">{{text}}</textarea></p>
+                    <input id="lang" type="hidden" name="tolang" value= "{{tolang}}">
                 </div>
 
                 <button class="search" type="submit">検索</button>
@@ -52,20 +59,22 @@
     <script>
         'use strict';
         let Record=0
+
         function OnButtonClick(){
-            
+            Record+=1;
             console.log("haitta");
-            if (Record%2==0){
+            if (document.getElementById("lang").value=="ja"){
                 document.getElementById("la").textContent="日本語";
                 document.getElementById("la2").textContent="英語";
-            }
-            if (Record%2!=0){
+                document.getElementById("lang").value="en";
+            }else {
                 document.getElementById("la").textContent="英語";
                 document.getElementById("la2").textContent="日本語";
+                document.getElementById("lang").value="ja";
             }
-            Record+=1;
 
         }
+        
     </script>
 </body>
  
