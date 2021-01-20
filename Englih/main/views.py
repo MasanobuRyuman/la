@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views import generic
+from googletrans import Translator
 
 class IndexView(generic.TemplateView):
     template_name="index.html"
@@ -10,8 +11,10 @@ def exercise(request):
     print(request.POST)
     try:
         input_text = request.POST['text_input']
+        translator = Translator(service_urls=['translate.googleapis.com'])
+        rans_en = translator.translate(input_text,src="en",dest="ja").text
     
-        text = input_text
+        text = rans_en
     except:
         return render(request, 'index.html')
     print("ok")

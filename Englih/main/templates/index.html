@@ -24,7 +24,6 @@
     </heder>
     <div id="wrap">
         <div class="content">
-            <p>{{text}}</p>
 
             <div class="changearea">
                 <button class="change" type="submit" onclick="OnButtonClick()">入れ替え</button>
@@ -37,7 +36,7 @@
                 {% csrf_token %}
                 <div class="text">
                     <p><textarea class="Input" cols="40" rows="10" name="text_input">{{text_input}}</textarea></p>
-                    <p><textarea class="Output" cols="40" rows="10"></textarea></p>
+                    <p><textarea class="Output" cols="40" rows="10">{{text}}</textarea></p>
                 </div>
 
                 <button class="search" type="submit">検索</button>
