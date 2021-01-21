@@ -7,4 +7,5 @@ urlpatterns=[
     path('move',views.move,name='move'),
     path('',views.IndexView.as_view(),name='index'),
     path('review',views.ReviewView.as_view(),name='review'),
+    path('index',views.Index2View.as_view(),name='index'),
 ]

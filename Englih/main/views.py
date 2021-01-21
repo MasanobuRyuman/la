@@ -8,9 +8,12 @@ class IndexView(generic.TemplateView):
 class ReviewView(generic.TemplateView):
     template_name="review.html" 
 
+class Index2View(generic.TemplateView):
+    template_name="index.html"
+
 # Create your views here.
 def review(request):
-    return render(request,'review.html')
+    return render(request,'main/review.html')
 
 def move(request):
     print("haitta")
