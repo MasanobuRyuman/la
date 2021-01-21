@@ -4,11 +4,20 @@ from googletrans import Translator
 
 class IndexView(generic.TemplateView):
     template_name="index.html"
+
+class ReviewView(generic.TemplateView):
+    template_name="review.html" 
+
 # Create your views here.
+def review(request):
+    return render(request,'review.html')
+
 def move(request):
     print("haitta")
+
 fromlang="en"
 tolang="ja"
+
 def exercise(request):
     text = 'テストです。'
     print(request.POST)
