@@ -16,16 +16,33 @@
         <nav>
             <ul class=global-nav>
                 <li><a href="/index">検索</a></li>
-                <li><a href="review.html">復習</a></li>
+                <li><a href="/review">復習</a></li>
                 <li><a href="test.html">テスト</a></li>
             </ul>
         </nav>
     </heder>
     <div id="wrap">
         <div class="content">
-
+            <body>
+                <h1>{{title}}</h1>
+                <table border="1">
+                    <tr>
+                    {% for h in header %}
+                        <th>{{h}}</th>
+                    {% endfor %}
+                    </tr>
             
-    
+                    {% for i in val %}
+                    <tr>
+                        <td>{{ i.id }}</td>
+                        <td>{{ i.jan }}</td>
+                        <td>{{ i.eng }}</td>
+                    
+                    </tr>
+                    {% endfor %}
+                </table>
+                </body>
+            </table>
         </div>
     </div>
     <footer>
