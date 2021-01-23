@@ -24,23 +24,28 @@
     <div id="wrap">
         <div class="content">
             <body>
-                <h1>{{title}}</h1>
-                <table border="1">
-                    <tr>
-                    {% for h in header %}
-                        <th>{{h}}</th>
-                    {% endfor %}
-                    </tr>
-            
-                    {% for i in val %}
-                    <tr>
-                        <td>{{ i.id }}</td>
-                        <td>{{ i.jan }}</td>
-                        <td>{{ i.eng }}</td>
-                    
-                    </tr>
-                    {% endfor %}
-                </table>
+                <h1 class="flamelist">{{title}}</h1>
+                <form action="detale" method='POST'>
+                    {% csrf_token %}
+                    <table border="1">
+                        <tr>
+                        {% for h in header %}
+                            <th>{{h}}</th>
+                        {% endfor %}
+                        </tr>
+                
+                        {% for i in val %}
+                        <tr>
+                            <td class="id">{{ i.id }}</td>
+                            <td>{{ i.jan }}</td>
+                            <td>{{ i.eng }}</td>
+                        　　 <td><button>削除</button></td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+
+                </form>
+                
                 </body>
             </table>
         </div>

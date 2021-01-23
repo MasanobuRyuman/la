@@ -16,14 +16,14 @@ class Index2View(generic.TemplateView):
 def review(request):
     print("test")
     infodata = InfoModelForm.objects.all()
-    header = ['ID','日本語','英語']
+    header = ['ID','日本語','英語','削除']
     print("ok")
     print(infodata)
     
     my_dict2 = {
-        'title':'テスト',
+        'title':'フレームリスト',
         'val':infodata,
-        'header':header
+        'header':header,
 
 
         
