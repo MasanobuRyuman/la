@@ -1,19 +1,34 @@
 from django.shortcuts import render
 from django.views import generic
 from googletrans import Translator
+from .models import InfoModelForm
+
 
 class IndexView(generic.TemplateView):
     template_name="index.html"
 
-class ReviewView(generic.TemplateView):
-    template_name="review.html" 
+
 
 class Index2View(generic.TemplateView):
     template_name="index.html"
 
 # Create your views here.
 def review(request):
-    return render(request,'main/review.html')
+    print("test")
+    infodata = InfoModelForm.objects.all()
+    header = ['ID','日本語','英語']
+    print("ok")
+    print(infodata)
+    
+    my_dict2 = {
+        'title':'テスト',
+        'val':infodata,
+        'header':header
+
+
+        
+    }
+    return render(request,'review.html',my_dict2)
 
 def move(request):
     print("haitta")
@@ -46,3 +61,7 @@ def exercise(request):
         'tolang':tolang,
     }
     return render(request, 'index.html', context)
+
+#データベース
+    
+
