@@ -176,6 +176,7 @@ button.change {
 
 button.search {
     font-size:30px;
+    margin-top: 7em;
 }
 
 #la {
@@ -208,22 +209,62 @@ button.search {
 
 .search {
     display: block;
-    margin:8em auto;
+    
+    margin:auto;
+}
+
+.flamelist {
+    text-align:center;
+    margin-top:50px;
+    font-size: 60px;
 }
 
 table {
-    color: skyblue
+    text-align: center;
+    text-decoration: none;
+    margin:30px auto;
+}
+
+table th:nth-child(1){
+    padding:10px;
+}
+
+table td:nth-child(1){
+    padding:10px;
+}
+
+table th:last-child{
+    padding:10px;
+}
+
+table td:last-child{
+    padding:10px;
 }
 
 table th {/*table内のthに対して*/
-    padding: 10px;/*上下左右10pxずつ*/
+    padding: 10px 150px;
+    color:white;
+    background: linear-gradient(#829ebc,#225588);
+    
 }
-  
-  table td {/*table内のtdに対して*/
-    padding: 3px 10px;/*上下3pxで左右10px*/
+
+table td {/*table内のtdに対して*/
+    padding: 10px 100px;/*上下3pxで左右10px*/
 }
 
 table th, table td {
     border: solid 1px black;
     /*実線 1px 黒*/
+}
+
+#move{
+    margin-top: 1em;
+}
+
+#save{
+    display: block;
+   
+    margin:auto;
+    font-size: 30px;
+
 }
