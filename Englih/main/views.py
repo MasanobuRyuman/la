@@ -14,11 +14,11 @@ class Index2View(generic.TemplateView):
 
 # Create your views here.
 def review(request):
-    print("test")
+    #print("test")
     infodata = InfoModelForm.objects.all()
-    header = ['ID','日本語','英語','削除']
-    print("ok")
-    print(infodata)
+    header = ['ID','日本語','英語',]
+    #print("ok")
+    #print(infodata)
     
     my_dict2 = {
         'title':'フレームリスト',
@@ -30,15 +30,13 @@ def review(request):
     }
     return render(request,'review.html',my_dict2)
 
-def move(request):
-    print("haitta")
 
 fromlang="en"
 tolang="ja"
 
 def exercise(request):
     text = 'テストです。'
-    print(request.POST)
+    #print(request.POST)
     try:
         if (request.POST['tolang']=='ja'):
             fromlang="en"
@@ -53,7 +51,7 @@ def exercise(request):
         text = rans_en
     except:
         return render(request, 'index.html')
-    print("ok")
+    #print("ok")
 
     
     context = {
@@ -61,6 +59,9 @@ def exercise(request):
         'tolang':tolang,
     }
     return render(request, 'index.html', context)
+
+def move(request):
+    text="test"
 
 #データベース
     

@@ -176,6 +176,7 @@ button.change {
 
 button.search {
     font-size:30px;
+    margin-top: 7em;
 }
 
 #la {
@@ -208,7 +209,8 @@ button.search {
 
 .search {
     display: block;
-    margin:8em auto;
+    
+    margin:auto;
 }
 
 .flamelist {
@@ -253,4 +255,16 @@ table td {/*table内のtdに対して*/
 table th, table td {
     border: solid 1px black;
     /*実線 1px 黒*/
+}
+
+#move{
+    margin-top: 1em;
+}
+
+#save{
+    display: block;
+   
+    margin:auto;
+    font-size: 30px;
+
 }

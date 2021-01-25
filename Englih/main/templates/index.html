@@ -43,12 +43,16 @@
                 {% csrf_token %}
                 <div class="text">
                     <p><textarea class="Input" cols="40" rows="10" name="text_input">{{text_input}}</textarea></p>
-                    <p><textarea class="Output" cols="40" rows="10">{{text}}</textarea></p>
+                    <p><textarea id="Output" class="Output" cols="40" rows="10">{{text}}</textarea></p>
                     <input id="lang" type="hidden" name="tolang" value= "{{tolang}}">
                 </div>
 
-                <button class="search" type="submit">検索</button>
+                <button class="search" onclick="Onpush()" type="submit">検索</button>
 
+            </form>
+            <form action="move" method="POST" id="move">
+                {% csrf_token %}
+                <button id="save" class="save" >保存</button>
             </form>
             
     
@@ -58,10 +62,10 @@
     </footer>
     <script>
         'use strict';
-        let Record=0
+        console.log("kikiki");
+        let blank=document.getElementById("Output").textContent;
 
         function OnButtonClick(){
-            Record+=1;
             console.log("haitta");
             if (document.getElementById("lang").value=="ja"){
                 document.getElementById("la").textContent="日本語";
@@ -72,9 +76,25 @@
                 document.getElementById("la2").textContent="日本語";
                 document.getElementById("lang").value="ja";
             }
+            
+            
 
         }
+
+        if (blank){
+            document.getElementById("save").style.visibility ="visible";
+        }else{
+            document.getElementById("save").style.visibility ="hidden";
+        }
+
+        function Onpush(){
+            if (brank){
+                document.getElementById("save").style.visibility ="visible";
+            }
+            console.log('ok')
+        }
         
+
     </script>
 </body>
  
