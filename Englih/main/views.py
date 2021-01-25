@@ -33,22 +33,30 @@ def review(request):
 
 fromlang="en"
 tolang="ja"
-
+rans_ja="no"
+rans_en="no"
 def exercise(request):
     text = 'テストです。'
     #print(request.POST)
     try:
+        global rans_ja
+        global rans_en
         if (request.POST['tolang']=='ja'):
             fromlang="en"
             tolang="ja"
+            rans_en = request.POST['text_input']
+            translator = Translator(service_urls=['translate.googleapis.com'])
+            rans_ja = translator.translate(rans_en,src=fromlang,dest=tolang).text
+            text = rans_ja
+            
         else :
             fromlang="ja"
             tolang="en"
-        input_text = request.POST['text_input']
-        translator = Translator(service_urls=['translate.googleapis.com'])
-        rans_en = translator.translate(input_text,src=fromlang,dest=tolang).text
-    
-        text = rans_en
+            rans_ja = request.POST['text_input']
+            translator = Translator(service_urls=['translate.googleapis.com'])
+            rans_en = translator.translate(rans_ja,src=fromlang,dest=tolang).text
+            text = rans_en
+        
     except:
         return render(request, 'index.html')
     #print("ok")
@@ -60,8 +68,12 @@ def exercise(request):
     }
     return render(request, 'index.html', context)
 
+#保存ボタンが押されたら
 def move(request):
-    text="test"
+    print("hitta")
+    addDate=InfoModelForm(jan=rans_ja,eng=rans_en)
+    addDate.save()
+    return render(request,'index.html')
 
 #データベース
     
