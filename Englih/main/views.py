@@ -16,7 +16,8 @@ class Index2View(generic.TemplateView):
 def review(request):
     #print("test")
     infodata = InfoModelForm.objects.all()
-    header = ['ID','日本語','英語',]
+    header = ['番号','日本語','英語']
+    id=0
     #print("ok")
     #print(infodata)
     
@@ -24,6 +25,7 @@ def review(request):
         'title':'フレームリスト',
         'val':infodata,
         'header':header,
+        'id':id,
 
 
         
@@ -31,8 +33,7 @@ def review(request):
     return render(request,'review.html',my_dict2)
 
 
-fromlang="en"
-tolang="ja"
+
 rans_ja="no"
 rans_en="no"
 def exercise(request):
@@ -71,10 +72,19 @@ def exercise(request):
 #保存ボタンが押されたら
 def move(request):
     print("hitta")
-    addDate=InfoModelForm(jan=rans_ja,eng=rans_en)
+    number=InfoModelForm.objects.all().count()
+    addDate=InfoModelForm(jan=rans_ja,eng=rans_en,num=number+1)
     addDate.save()
     return render(request,'index.html')
 
+def delete(request):
+    cou=InfoModelForm.objects.all().count()
+    for i in range(cou+1):
+        print(i)
+        if f'{i}' in request.POST:
+            InfoModelForm.objects.filter(num=i).delete()
+
+    return render(request,'index.html')
 #データベース
     
 
