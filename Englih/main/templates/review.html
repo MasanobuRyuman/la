@@ -25,29 +25,31 @@
         <div class="content">
             <body>
                 <h1 class="flamelist">{{title}}</h1>
-                <form action="delete" method='POST'>
-                    {% csrf_token %}
-                    <table border="1">
-                        <tr>
-                        {% for h in header %}
-                            <th>{{h}}</th>
-                        {% endfor %}
-                        </tr>
                 
-                        {% for i in val %}
-
+                <table border="1">
+                    <tr>
+                    {% for h in header %}
+                        <th>{{h}}</th>
+                    {% endfor %}
+                    </tr>
+            
+                    {% for i in val %}
+                    <form action="delete" method='POST'>
+                        {% csrf_token %}
                         <tr>
                             <td>{{ i.num }}</td>
                             <td>{{ i.jan }}</td>
                             <td>{{ i.eng }}</td>
             
-                        　　 <td><button name={{i.num}}>削除</button></td>
+                        　　 <td><button name="key" value="{{i.num}}">削除</button></td>
                         </tr>
-                        
-                        {% endfor %}
-                    </table>
 
-                </form>
+                    
+                    </form>
+                    {% endfor %}
+                </table>
+
+                
                 
                 </body>
             </table>
