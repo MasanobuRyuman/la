@@ -1,10 +1,10 @@
 @charset "utf-8";
 /*リセットcss
-/* 
+/*
 html5doctor.com Reset Stylesheet
 v1.6.1
 Last Updated: 2010-09-17
-Author: Richard Clark - http://richclarkdesign.com 
+Author: Richard Clark - http://richclarkdesign.com
 Twitter: @rich_clark
 */
 
@@ -17,7 +17,7 @@ b, i,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure, 
+article, aside, canvas, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video {
     margin:0;
@@ -34,7 +34,7 @@ body {
 }
 
 article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section { 
+footer,header,hgroup,menu,nav,section {
     display:block;
 }
 
@@ -70,7 +70,7 @@ ins {
 /* change colours to suit your needs */
 mark {
     background-color:#ff9;
-    color:#000; 
+    color:#000;
     font-style:italic;
     font-weight:bold;
 }
@@ -93,7 +93,7 @@ table {
 hr {
     display:block;
     height:1px;
-    border:0;   
+    border:0;
     border-top:1px solid #cccccc;
     margin:1em 0;
     padding:0;
@@ -195,7 +195,7 @@ button.search {
     clear: both;
 }
 
-.Input { 
+.Input {
     display:block;
     float: left;
     margin-left: 18em;
@@ -209,7 +209,7 @@ button.search {
 
 .search {
     display: block;
-    
+
     margin:auto;
 }
 
@@ -243,7 +243,7 @@ table th {/*table内のthに対して*/
     padding: 10px 200px;
     color:white;
     background: linear-gradient(#829ebc,#225588);
-    
+
 }
 
 table td {/*table内のtdに対して*/
@@ -261,8 +261,31 @@ table th, table td {
 
 #save{
     display: block;
-   
+
     margin:auto;
     font-size: 30px;
+}
 
+.problem{
+    margin-top:50px;
+    text-align: center;
+    font-size: 50px;
+}
+
+.push{
+    display: block;
+    margin:10px auto;
+    font-size: 30px;
+}
+
+#answer{
+    margin-top:20px;
+    text-align: center;
+    font-size: 50px;
+}
+
+.next {
+    display: block;
+    margin:10px auto;
+    font-size: 30px;
 }

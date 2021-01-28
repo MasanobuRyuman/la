@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ja">
-   
+
     {% load static %}
 <head>
     <!-- Required meta tags -->
@@ -17,22 +17,22 @@
             <ul class=global-nav>
                 <li><a href="/index">検索</a></li>
                 <li><a href="/review">復習</a></li>
-                <li><a href="test.html">テスト</a></li>
+                <li><a href="test">テスト</a></li>
             </ul>
         </nav>
-    </heder>
+    </header>
     <div id="wrap">
         <div class="content">
             <body>
                 <h1 class="flamelist">{{title}}</h1>
-                
+
                 <table border="1">
                     <tr>
                     {% for h in header %}
                         <th>{{h}}</th>
                     {% endfor %}
                     </tr>
-            
+
                     {% for i in val %}
                     <form action="delete" method='POST'>
                         {% csrf_token %}
@@ -40,20 +40,21 @@
                             <td>{{ i.num }}</td>
                             <td>{{ i.jan }}</td>
                             <td>{{ i.eng }}</td>
-            
+
                         　　 <td><button name="key" value="{{i.num}}">削除</button></td>
                         </tr>
 
-                    
+
                     </form>
                     {% endfor %}
                 </table>
 
-                
-                
-                </body>
-            </table>
+
+
+           </body>
+
         </div>
     </div>
     <footer>
     </footer>
+</body>

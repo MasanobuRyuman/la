@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views import generic
 from googletrans import Translator
 from .models import InfoModelForm
-
+import random
 
 class IndexView(generic.TemplateView):
     template_name="index.html"
@@ -19,18 +19,27 @@ def review(request):
     header = ['番号','日本語','英語']
     #print("ok")
     #print(infodata)
-    
+
     my_dict2 = {
         'title':'フレーズリスト',
         'val':infodata,
         'header':header,
 
 
-        
+
     }
     return render(request,'review.html',my_dict2)
 
-
+def test(request):
+    number=InfoModelForm.objects.all().count()
+    quantity=random.randint(1,number)
+    outputDate=InfoModelForm.objects.get(num=quantity)
+    print(outputDate.eng)
+    word={
+        'japanese':outputDate.jan,
+        'englih':outputDate.eng,
+    }
+    return render(request,'test.html',word)
 
 rans_ja="no"
 rans_en="no"
@@ -47,7 +56,7 @@ def exercise(request):
             translator = Translator(service_urls=['translate.googleapis.com'])
             rans_ja = translator.translate(rans_en,src=fromlang,dest=tolang).text
             text = rans_ja
-            
+
         else :
             fromlang="ja"
             tolang="en"
@@ -55,12 +64,12 @@ def exercise(request):
             translator = Translator(service_urls=['translate.googleapis.com'])
             rans_en = translator.translate(rans_ja,src=fromlang,dest=tolang).text
             text = rans_en
-        
+
     except:
         return render(request, 'index.html')
     #print("ok")
 
-    
+
     context = {
         'text': text,
         'tolang':tolang,
@@ -79,18 +88,32 @@ def delete(request):
     number=request.POST.get("key")
     print(number)
     InfoModelForm.objects.filter(num=number).delete()
-            
+
     infodata = InfoModelForm.objects.all()
     header = ['番号','日本語','英語']
     #print("ok")
     #print(infodata)
-    
+
     my_dict2 = {
         'title':'フレーズリスト',
         'val':infodata,
         'header':header,
     }
     return render(request,'review.html',my_dict2)
-#データベース
-    
 
+def next(request):
+    number=InfoModelForm.objects.all().count()
+    quantity=random.randint(1,number)
+    print(quantity)
+    outputDate=InfoModelForm.objects.get(num=quantity)
+    #print(outputDate.eng)
+    word={
+        'japanese':outputDate.jan,
+        'englih':outputDate.eng,
+    }
+    return render(request,'test.html',word)
+
+
+
+
+#データベース
