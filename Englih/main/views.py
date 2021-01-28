@@ -17,15 +17,13 @@ def review(request):
     #print("test")
     infodata = InfoModelForm.objects.all()
     header = ['番号','日本語','英語']
-    id=0
     #print("ok")
     #print(infodata)
     
     my_dict2 = {
-        'title':'フレームリスト',
+        'title':'フレーズリスト',
         'val':infodata,
         'header':header,
-        'id':id,
 
 
         
@@ -78,13 +76,21 @@ def move(request):
     return render(request,'index.html')
 
 def delete(request):
-    cou=InfoModelForm.objects.all().count()
-    for i in range(cou+1):
-        print(i)
-        if f'{i}' in request.POST:
-            InfoModelForm.objects.filter(num=i).delete()
-
-    return render(request,'index.html')
+    number=request.POST.get("key")
+    print(number)
+    InfoModelForm.objects.filter(num=number).delete()
+            
+    infodata = InfoModelForm.objects.all()
+    header = ['番号','日本語','英語']
+    #print("ok")
+    #print(infodata)
+    
+    my_dict2 = {
+        'title':'フレーズリスト',
+        'val':infodata,
+        'header':header,
+    }
+    return render(request,'review.html',my_dict2)
 #データベース
     
 
