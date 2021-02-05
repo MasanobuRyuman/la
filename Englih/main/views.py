@@ -90,6 +90,9 @@ def delete(request):
     InfoModelForm.objects.filter(jan=key_name).delete()
 
     infodata = InfoModelForm.objects.all()
+    print(infodata)
+    for i in infodata:
+        print(i)
     header = ['日本語','英語']
     #print("ok")
     #print(infodata)
