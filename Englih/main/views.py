@@ -16,7 +16,7 @@ class Index2View(generic.TemplateView):
 def review(request):
     #print("test")
     infodata = InfoModelForm.objects.all()
-    header = ['番号','日本語','英語']
+    header = ['日本語','英語']
     #print("ok")
     #print(infodata)
 
@@ -85,12 +85,12 @@ def move(request):
     return render(request,'index.html')
 
 def delete(request):
-    number=request.POST.get("key")
-    print(number)
-    InfoModelForm.objects.filter(num=number).delete()
+    key_name=request.POST.get("key")
+    print(key_name)
+    InfoModelForm.objects.filter(jan=key_name).delete()
 
     infodata = InfoModelForm.objects.all()
-    header = ['番号','日本語','英語']
+    header = ['日本語','英語']
     #print("ok")
     #print(infodata)
 
@@ -110,8 +110,30 @@ def next(request):
     word={
         'japanese':outputDate.jan,
         'englih':outputDate.eng,
+        'chan':chan
     }
     return render(request,'test.html',word)
+
+def change(request):
+    global chan
+    if(request.POST['chan']=="ja"):
+        print("no")
+        chan="en"
+    else:
+        print('okです')
+        chan="ja"
+    number=InfoModelForm.objects.all().count()
+    quantity=random.randint(1,number)
+    print(quantity)
+    outputDate=InfoModelForm.objects.get(num=quantity)
+    #print(outputDate.eng)
+    word={
+        'japanese':outputDate.jan,
+        'englih':outputDate.eng,
+        'chan':chan
+    }
+    return render(request,'test.html',word)
+
 
 
 

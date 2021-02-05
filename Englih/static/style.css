@@ -225,16 +225,6 @@ table {
     margin:30px auto;
 }
 
-table th:nth-child(1){
-    padding:10px;
-}
-
-table td:nth-child(1){
-    padding:10px;
-}
-
-
-
 table td:last-child{
     padding:10px;
 }
@@ -288,4 +278,10 @@ table th, table td {
     display: block;
     margin:10px auto;
     font-size: 30px;
+}
+
+#la_change {
+    margin-top: 50px;
+    font-size:20px;
+    margin-left: 20em;
 }

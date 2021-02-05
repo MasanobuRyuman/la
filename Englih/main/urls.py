@@ -7,6 +7,7 @@ urlpatterns=[
     path('move',views.move,name='move'),
     path('delete',views.delete,name='delete'),
     path('next',views.next,name='next'),
+    path('change',views.change,name='change'),
     path('',views.IndexView.as_view(),name='index'),
     path('review',views.review,name='review'),
     path('test',views.test,name='test'),
