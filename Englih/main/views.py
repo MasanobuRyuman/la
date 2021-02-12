@@ -115,6 +115,10 @@ def next(request):
     quantity=random.randint(1,number)
     print(quantity)
     outputDate=InfoModelForm.objects.get(num=quantity)
+    if(request.POST['chan']=='ja'):
+        chan="ja"
+    else:
+        chan="en"
     #print(outputDate.eng)
     word={
         'japanese':outputDate.jan,
