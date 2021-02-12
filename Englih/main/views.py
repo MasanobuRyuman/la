@@ -16,7 +16,7 @@ class Index2View(generic.TemplateView):
 def review(request):
     #print("test")
     infodata = InfoModelForm.objects.all()
-    header = ['日本語','英語']
+    header = ['番号','日本語','英語']
     #print("ok")
     #print(infodata)
 
@@ -91,9 +91,15 @@ def delete(request):
 
     infodata = InfoModelForm.objects.all()
     print(infodata)
+    global changenum
+    changenum=1
     for i in infodata:
-        print(i)
-    header = ['日本語','英語']
+        print(i.jan)
+        i.num=changenum
+        i.save()
+        print(i.num)
+        changenum+=1
+    header = ['番号','日本語','英語']
     #print("ok")
     #print(infodata)
 

@@ -37,6 +37,7 @@
                     <form action="delete" method='POST'>
                         {% csrf_token %}
                         <tr>
+                            <td>{{ i.num }}</td>
                             <td>{{ i.jan }}</td>
                             <td>{{ i.eng }}</td>
                         　　 <td><button name="key" value="{{i.jan}}">削除</button></td>
