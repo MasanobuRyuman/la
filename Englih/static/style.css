@@ -225,6 +225,10 @@ table {
     margin:30px auto;
 }
 
+table th:nth-child(1){
+    padding: 4px;
+}
+
 table td:last-child{
     padding:10px;
 }

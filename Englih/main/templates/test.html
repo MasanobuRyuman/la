@@ -40,6 +40,7 @@
             <form action="next" method="POST">
                 {% csrf_token %}
                 <button class="next">次へ</button>
+                <input id="chan" type="hidden" name="chan" value= "{{chan}}">
             </form>
         </div>
     </div>
