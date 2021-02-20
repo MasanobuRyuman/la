@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.views import generic
 from googletrans import Translator
 from .models import InfoModelForm
+from .models import SecondInfoModelForm
+from .models import ThirdInfoModelForm
 import random
 
 class IndexView(generic.TemplateView):
