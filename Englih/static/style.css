@@ -289,3 +289,36 @@ table th, table td {
     font-size:20px;
     margin-left: 20em;
 }
+
+.name {
+    margin-top: 2px;
+    margin-left: 35%;
+    font-size: 50px;
+}
+.nameinput{
+    margin-top:5px;
+    margin-left:35%;
+}
+.password{
+    margin-top:5px;
+    margin-left: 35%;
+    font-size: 50px;
+}
+.passwordinput{
+    margin-top:5px;
+    margin-left: 35%;
+}
+.login{
+    margin-left:35%;
+    margin-top: 20px;
+}
+.return{
+    margin-left:35%;
+    margin-top: 20px;
+}
+.namein{
+    margin-left: 35%;
+    margin-top: 5px;
+    font-size: 20px;
+    color:red;
+}
