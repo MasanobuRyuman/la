@@ -6,8 +6,8 @@ from .models import SecondInfoModelForm
 from .models import ThirdInfoModelForm
 import random
 
-class IndexView(generic.TemplateView):
-    template_name="index.html"
+class formView(generic.TemplateView):
+    template_name="form.html"
 
 
 
@@ -42,6 +42,12 @@ def test(request):
         'englih':outputDate.eng,
     }
     return render(request,'test.html',word)
+
+def login(request):
+    return render(request,'login.html')
+
+def newlogin(request):
+    return render(request,'newlogin.html')
 
 rans_ja="no"
 rans_en="no"
