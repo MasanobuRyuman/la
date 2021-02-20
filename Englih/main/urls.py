@@ -14,4 +14,7 @@ urlpatterns=[
     path('index',views.Index2View.as_view(),name='index'),
     path('login',views.login,name='login'),
     path('newlogin',views.newlogin,name='newlogin'),
+    path('confirmation',views.confirmation,name="confirmation"),
+    path('registration',views.registration,name="registration"),
+    path('back',views.back,name="back"),
 ]

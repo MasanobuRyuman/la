@@ -18,11 +18,19 @@
     </header>
     <div id="wrap">
         <div class="content">
-            <p class="name">名前</p>
-            <input class="nameinput"></input>
-            <p class="password">パスワード</p>
-            <input class="passwordinput"></input>
-            <button class="login">ログイン</button>
+            <form action="confirmation" method="POST">
+                {% csrf_token %}
+                <p class="namein">{{text}}</p>
+                <p class="name">名前</p>
+                <p><textarea class="nameinput" cols="30" rows="1" name="name_input">{{name_input}}</textarea></p>
+                <p class="password">パスワード</p>
+                <p><textarea class="passwordinput" cols="40" rows="1" name="password_input">{{password_input}}</textarea></p>
+                <p><button class="login">ログイン</button></p>
+            </form>
+            <form action="back" method="POST">
+                {% csrf_token %}
+                <p><button class="return">戻る</button></p>
+            </form>
         </div>
     </div>
     <footer>

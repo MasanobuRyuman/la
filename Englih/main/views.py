@@ -51,6 +51,8 @@ def newlogin(request):
 
 rans_ja="no"
 rans_en="no"
+
+#翻訳
 def exercise(request):
     text = 'テストです。'
     #print(request.POST)
@@ -155,8 +157,59 @@ def change(request):
     }
     return render(request,'test.html',word)
 
+#ログイン
+def confirmation(request):
+    global username
+    print(request.POST['name_input'])
+    print(request.POST['password_input'])
+    username=request.POST['name_input']
+    userpassword=request.POST['password_input']
+    alldatecount=ThirdInfoModelForm.objects.all().count()
+    if (alldatecount==0):
+        answer={
+            "text":"名前かパスワードが間違っています。"
+        }
+        return render(request,'login.html',answer)
+    alldate=ThirdInfoModelForm.objects.all()
+    for i in alldate:
+        if(username==i.name and userpassword==i.password):
+            return render(request,'index.html',answer)
+    answer={
+        "text":"名前かパスワードが間違っています。"
+    }
+    return render(request,'login.html',answer)
 
+#新規登録
+def registration(request):
+    global username
+    print(request.POST['name_input'])
+    print(request.POST['password_input'])
+    username=request.POST['name_input']
+    userpassword=request.POST['password_input']
+    alldatecount=ThirdInfoModelForm.objects.all().count()
+    print(alldatecount)
+    if (alldatecount==0):
+        print("なにも入っていない")
+        addDate=ThirdInfoModelForm(name=username,password=userpassword)
+        addDate.save()
+        return render(request,'index.html')
+    alldate=ThirdInfoModelForm.objects.all()
+    for i in alldate:
+        if (username==i.name):
+            print("すでに入っていた")
+            answer={
+                "text":"すでに使われてる名前です"
+            }
+            return render(request,'newlogin.html',answer)
+    newdate=ThirdInfoModelForm(name=username,password=userpassword)
+    newdate.save()
+    update=InfoModelForm(name=username)
+    update.save()
+    return render(request,'index.html')
 
+#ログイン・新規登録からフォームまで戻る
+def back(request):
+    return render(request,'form.html')
 
 
 #データベース

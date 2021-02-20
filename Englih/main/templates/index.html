@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ja">
-   
+
     {% load static %}
 <head>
     <!-- Required meta tags -->
@@ -25,12 +25,11 @@
     <div id="wrap">
         <div class="content">
 
-            
+
             <div class="changearea">
                 <p><button class="change"  onclick="OnButtonClick()">入れ替え</button></p>
-
             </div>
-            
+
             {% if tolang == "ja" %}
                 <p id="la" name="la">英語</p>
                 <p id="la2" name="la2">日本語</p>
@@ -54,8 +53,8 @@
                 {% csrf_token %}
                 <button id="save" class="save" >保存</button>
             </form>
-            
-    
+
+
         </div>
     </div>
     <footer>
@@ -76,8 +75,8 @@
                 document.getElementById("la2").textContent="日本語";
                 document.getElementById("lang").value="ja";
             }
-            
-            
+
+
 
         }
 
@@ -93,9 +92,9 @@
             }
             console.log('ok')
         }
-        
+
 
     </script>
 </body>
- 
+
 </html>
