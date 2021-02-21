@@ -317,8 +317,54 @@ table th, table td {
     margin-top: 20px;
 }
 .namein{
-    margin-left: 35%;
+    text-align: center;
     margin-top: 5px;
     font-size: 20px;
     color:red;
+}
+
+.Introduction{
+    margin-top: 20px;
+    margin-left: 20%;
+    font-size: 30px;
+    color:blue;
+}
+
+.matter{
+    margin-left: 22%;
+}
+
+.chank{
+    margin-top:20px;
+    margin-left: 20%;
+    font-size: 30px;
+    color:blue;
+}
+
+.chankcontent{
+    margin-left: 22%;
+}
+
+.serchPractice{
+    margin-top: 20px;
+    margin-left: 20%;
+    font-size: 30px;
+    color:blue;
+}
+
+.serchPracticeContent{
+    margin-left: 22%;
+
+}
+
+.useApp{
+    margin-top:20px;
+    margin-left: 20%;
+    font-size: 30px;
+    color:blue;
+}
+
+.useAppContent{
+    margin-left: 22%;
+    margin-bottom: 30px;
 }

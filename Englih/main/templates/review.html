@@ -24,6 +24,7 @@
     <div id="wrap">
         <div class="content">
             <body>
+                <p class="namein">{{text}}</p>
                 <h1 class="flamelist">{{title}}</h1>
 
                 <table border="1">
@@ -37,7 +38,7 @@
                     <form action="delete" method='POST'>
                         {% csrf_token %}
                         <tr>
-                            <td>{{ i.num }}</td>
+                            <td>{{ i.wordID }}</td>
                             <td>{{ i.jan }}</td>
                             <td>{{ i.eng }}</td>
                         　　 <td><button name="key" value="{{i.jan}}">削除</button></td>

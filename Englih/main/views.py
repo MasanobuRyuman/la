@@ -15,9 +15,65 @@ class Index2View(generic.TemplateView):
     template_name="index.html"
 
 # Create your views here.
+
+
+#ログイン
+def confirmation(request):
+    global username
+    print(request.POST['name_input'])
+    print(request.POST['password_input'])
+    username=request.POST['name_input']
+    userpassword=request.POST['password_input']
+    alldatecount=ThirdInfoModelForm.objects.all().count()
+    if (alldatecount==0):
+        answer={
+            "text":"名前かパスワードが間違っています。"
+        }
+        return render(request,'login.html',answer)
+    alldate=ThirdInfoModelForm.objects.all()
+    for i in alldate:
+        if(username==i.name and userpassword==i.password):
+            return render(request,'index.html')
+    answer={
+        "text":"名前かパスワードが間違っています。"
+    }
+    return render(request,'login.html',answer)
+
+#新規登録
+def registration(request):
+    global username
+    print(request.POST['name_input'])
+    print(request.POST['password_input'])
+    username=request.POST['name_input']
+    userpassword=request.POST['password_input']
+    alldatecount=ThirdInfoModelForm.objects.all().count()
+    print(alldatecount)
+    if (alldatecount==0):
+        print("なにも入っていない")
+        addDate=ThirdInfoModelForm(name=username,password=userpassword)
+        addDate.save()
+        update=InfoModelForm(name=username)
+        update.save()
+        return render(request,'index.html')
+    alldate=ThirdInfoModelForm.objects.all()
+    for i in alldate:
+        if (username==i.name):
+            print("すでに入っていた")
+            answer={
+                "text":"すでに使われてる名前です"
+            }
+            return render(request,'newlogin.html',answer)
+    newdate=ThirdInfoModelForm(name=username,password=userpassword)
+    newdate.save()
+    update=InfoModelForm(name=username)
+    update.save()
+    return render(request,'index.html')
+
+
+
 def review(request):
     #print("test")
-    infodata = InfoModelForm.objects.all()
+    infodata = SecondInfoModelForm.objects.filter(name=username)
     header = ['番号','日本語','英語']
     #print("ok")
     #print(infodata)
@@ -33,9 +89,14 @@ def review(request):
     return render(request,'review.html',my_dict2)
 
 def test(request):
-    number=InfoModelForm.objects.all().count()
+    number=SecondInfoModelForm.objects.filter(name=username).count()
+    if (number==0):
+        answer={
+            "text":"フレーズが保存されていません"
+        }
+        return render(request,'review.html',answer)
     quantity=random.randint(1,number)
-    outputDate=InfoModelForm.objects.get(num=quantity)
+    outputDate=SecondInfoModelForm.objects.get(name=username,wordID=quantity)
     print(outputDate.eng)
     word={
         'japanese':outputDate.jan,
@@ -89,25 +150,25 @@ def exercise(request):
 #保存ボタンが押されたら
 def move(request):
     print("hitta")
-    number=InfoModelForm.objects.all().count()
-    addDate=InfoModelForm(jan=rans_ja,eng=rans_en,num=number+1)
+    number=SecondInfoModelForm.objects.filter(name=username).count()
+    addDate=SecondInfoModelForm(name=username,wordID=number+1,jan=rans_ja,eng=rans_en)
     addDate.save()
     return render(request,'index.html')
 
 def delete(request):
     key_name=request.POST.get("key")
     print(key_name)
-    InfoModelForm.objects.filter(jan=key_name).delete()
+    SecondInfoModelForm.objects.filter(jan=key_name).delete()
 
-    infodata = InfoModelForm.objects.all()
+    infodata = SecondInfoModelForm.objects.filter(name=username)
     print(infodata)
     global changenum
     changenum=1
     for i in infodata:
         print(i.jan)
-        i.num=changenum
+        i.wordID=changenum
         i.save()
-        print(i.num)
+        print(i.wordID)
         changenum+=1
     header = ['番号','日本語','英語']
     #print("ok")
@@ -121,10 +182,10 @@ def delete(request):
     return render(request,'review.html',my_dict2)
 
 def next(request):
-    number=InfoModelForm.objects.all().count()
+    number=SecondInfoModelForm.objects.filter(name=username).count()
     quantity=random.randint(1,number)
     print(quantity)
-    outputDate=InfoModelForm.objects.get(num=quantity)
+    outputDate=SecondInfoModelForm.objects.get(name=username,wordID=quantity)
     if(request.POST['chan']=='ja'):
         chan="ja"
     else:
@@ -145,10 +206,10 @@ def change(request):
     else:
         print('okです')
         chan="ja"
-    number=InfoModelForm.objects.all().count()
+    number=SecondInfoModelForm.objects.filter(name=username).count()
     quantity=random.randint(1,number)
     print(quantity)
-    outputDate=InfoModelForm.objects.get(num=quantity)
+    outputDate=SecondInfoModelForm.objects.get(wordID=quantity)
     #print(outputDate.eng)
     word={
         'japanese':outputDate.jan,
@@ -157,55 +218,7 @@ def change(request):
     }
     return render(request,'test.html',word)
 
-#ログイン
-def confirmation(request):
-    global username
-    print(request.POST['name_input'])
-    print(request.POST['password_input'])
-    username=request.POST['name_input']
-    userpassword=request.POST['password_input']
-    alldatecount=ThirdInfoModelForm.objects.all().count()
-    if (alldatecount==0):
-        answer={
-            "text":"名前かパスワードが間違っています。"
-        }
-        return render(request,'login.html',answer)
-    alldate=ThirdInfoModelForm.objects.all()
-    for i in alldate:
-        if(username==i.name and userpassword==i.password):
-            return render(request,'index.html',answer)
-    answer={
-        "text":"名前かパスワードが間違っています。"
-    }
-    return render(request,'login.html',answer)
 
-#新規登録
-def registration(request):
-    global username
-    print(request.POST['name_input'])
-    print(request.POST['password_input'])
-    username=request.POST['name_input']
-    userpassword=request.POST['password_input']
-    alldatecount=ThirdInfoModelForm.objects.all().count()
-    print(alldatecount)
-    if (alldatecount==0):
-        print("なにも入っていない")
-        addDate=ThirdInfoModelForm(name=username,password=userpassword)
-        addDate.save()
-        return render(request,'index.html')
-    alldate=ThirdInfoModelForm.objects.all()
-    for i in alldate:
-        if (username==i.name):
-            print("すでに入っていた")
-            answer={
-                "text":"すでに使われてる名前です"
-            }
-            return render(request,'newlogin.html',answer)
-    newdate=ThirdInfoModelForm(name=username,password=userpassword)
-    newdate.save()
-    update=InfoModelForm(name=username)
-    update.save()
-    return render(request,'index.html')
 
 #ログイン・新規登録からフォームまで戻る
 def back(request):
