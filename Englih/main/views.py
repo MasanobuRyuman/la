@@ -74,7 +74,7 @@ def registration(request):
 def review(request):
     #print("test")
     infodata = SecondInfoModelForm.objects.filter(name=username)
-    header = ['番号','日本語','英語']
+    header = ['番号','日本語','英語','']
     #print("ok")
     #print(infodata)
 
@@ -170,7 +170,7 @@ def delete(request):
         i.save()
         print(i.wordID)
         changenum+=1
-    header = ['番号','日本語','英語']
+    header = ['番号','日本語','英語',""]
     #print("ok")
     #print(infodata)
 
@@ -209,7 +209,7 @@ def change(request):
     number=SecondInfoModelForm.objects.filter(name=username).count()
     quantity=random.randint(1,number)
     print(quantity)
-    outputDate=SecondInfoModelForm.objects.get(wordID=quantity)
+    outputDate=SecondInfoModelForm.objects.filter(name=username).get(wordID=quantity)
     #print(outputDate.eng)
     word={
         'japanese':outputDate.jan,
