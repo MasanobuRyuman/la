@@ -178,11 +178,57 @@ button.change {
     font-size: 30px;
     margin-top: 2em;
     text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+}
+
+.change:active {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    border-bottom: none;
 }
 
 button.search {
     font-size:30px;
-    margin-top: 300px;
+    margin: 300px auto;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+}
+
+.search:active{
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    border-bottom: n
+}
+
+#save{
+    display: block;
+    margin:auto;
+    font-size: 30px;
+    margin-top: -280px;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+}
+
+#save:active{
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    border-bottom: none;
 }
 
 #la {
@@ -217,10 +263,7 @@ button.search {
 }
 
 
-.search {
-    display: block;
-    margin:auto;
-}
+
 
 .flamelist {
     text-align:center;
@@ -261,15 +304,20 @@ table th, table td {
     /*実線 1px 黒*/
 }
 
-#move{
-    margin-top: 1em;
+.delete{
+    display: inline-block;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
 }
 
-#save{
-    display: block;
-
-    margin:auto;
-    font-size: 30px;
+.delete:active{
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    border-bottom: none;
 }
 
 .problem{
@@ -284,6 +332,18 @@ table th, table td {
     display: block;
     margin:10px auto;
     font-size: 30px;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+}
+
+.push:active{
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    border-bottom: n
 }
 
 #answer{
@@ -296,12 +356,37 @@ table th, table td {
     display: block;
     margin:10px auto;
     font-size: 30px;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+}
+
+.next:active{
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    border-bottom: n
 }
 
 #la_change {
     margin-top: 50px;
     font-size:20px;
-    margin-left: 20em;
+    margin-left: 20%;
+    display: inline-block;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+}
+
+#la_change:active{
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    border-bottom: n
 }
 
 .name {
@@ -317,6 +402,7 @@ table th, table td {
     margin-top:5px;
     margin-left: 35%;
     font-size: 50px;
+
 }
 .passwordinput{
     margin-top:5px;
@@ -325,10 +411,24 @@ table th, table td {
 .login{
     margin-left:35%;
     margin-top: 20px;
+    display: inline-block;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
 }
+
+
 .return{
     margin-left:35%;
     margin-top: 20px;
+    display: inline-block;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
 }
 .namein{
     text-align: center;
@@ -361,6 +461,7 @@ table th, table td {
 
 .chankcontent{
     margin-left: 22%;
+    margin-right: 22%;
 }
 
 .serchPractice{
@@ -388,15 +489,41 @@ table th, table td {
 
 .useAppContent{
     margin-left: 22%;
+    margin-right: 22%;
     margin-bottom: 30px;
 }
 
 .formReturn{
+    display: inline-block;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-bottom: solid 4px #627295;
     margin-left:90%;
     font-size: 10px;
 }
 
+.formReturn:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+  border-bottom: none;
+}
+
 @media screen and (max-width:1024px){
+    header {
+        widows: 100px;;
+        height:200px;
+        margin:0 auto;
+        background-image: url(image/blue_00110.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% auto;
+        background-position: center top;
+    }
+
     .logo {
         text-align: center;
         margin-top:-30px;
@@ -405,8 +532,8 @@ table th, table td {
 
     .logo2 {
         text-align: center;
-        margin-top:0px;
-        font-size: 80px;
+        margin-top: -30px;
+        font-size: 90px;
     }
 
     .global-nav {
@@ -417,7 +544,7 @@ table th, table td {
     .global-nav li {
         float:left;
         margin: 0 20px;
-        font-size: 20px;
+        font-size: 40px;
     }
 
     .global-nav li a {
@@ -444,15 +571,62 @@ table th, table td {
         width: 100%;
         text-align:center;
     }
+
     button.change {
-        font-size: 30px;
+        font-size: 40px;
         margin-top: 2em;
         text-align: center;
+        display: inline-block;
+        text-decoration: none;
+        background: #668ad8;/*ボタン色*/
+        color: #FFF;
+        border-bottom: solid 4px #627295;
+        border-radius: 3px;
+    }
+
+    .change:active {
+        -webkit-transform: translateY(4px);
+        transform: translateY(4px);/*下に動く*/
+        box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+        border-bottom: none;
     }
 
     button.search {
-        font-size:30px;
-        margin-top: 7em;
+        font-size:40px;
+        margin: 10em auto;
+        text-align: center;
+        display: block;
+        text-decoration: none;
+        background: #668ad8;/*ボタン色*/
+        color: #FFF;
+        border-bottom: solid 4px #627295;
+        border-radius: 3px;
+    }
+
+    .search:active{
+        -webkit-transform: translateY(4px);
+        transform: translateY(4px);/*下に動く*/
+        box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+        border-bottom: n
+    }
+
+    #save{
+        display: block;
+        margin:auto;
+        font-size: 40px;
+        margin-top: -8em;
+        text-decoration: none;
+        background: #668ad8;/*ボタン色*/
+        color: #FFF;
+        border-bottom: solid 4px #627295;
+        border-radius: 3px;
+    }
+
+    #save:active{
+        -webkit-transform: translateY(4px);
+        transform: translateY(4px);/*下に動く*/
+        box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+        border-bottom: none;
     }
 
     #la {
@@ -473,6 +647,7 @@ table th, table td {
     }
 
     .Input {
+        font-size: 20px;
         width: 290px;
         height: 15em;
         float:left;
@@ -480,6 +655,7 @@ table th, table td {
     }
 
     .Output{
+        font-size: 20px;
         width: 290px;
         height: 15em;
         float: right;
@@ -489,7 +665,6 @@ table th, table td {
 
     .search {
         display: block;
-        
         margin:auto;
     }
 
@@ -532,17 +707,6 @@ table th, table td {
         /*実線 1px 黒*/
     }
 
-    #move{
-        margin-top: 1em;
-    }
-
-    #save{
-        display: block;
-
-        margin:auto;
-        font-size: 30px;
-    }
-
     .problem{
         margin-top:50px;
         text-align: center;
@@ -554,7 +718,7 @@ table th, table td {
     .push{
         display: block;
         margin:10px auto;
-        font-size: 30px;
+        font-size: 40px;
     }
 
     #answer{
@@ -566,45 +730,47 @@ table th, table td {
     .next {
         display: block;
         margin:10px auto;
-        font-size: 30px;
+        font-size: 40px;
     }
 
     #la_change {
         margin-top: 50px;
-        font-size:20px;
-        margin-left: 20em;
+        font-size:40px;
+        margin-left: 20%;
     }
 
     .name {
         margin-top: 2px;
         margin-left: 35%;
-        font-size: 50px;
+        font-size: 60px;
     }
     .nameinput{
-        margin-top:5px;
+        margin-top:15px;
         margin-left:35%;
     }
     .password{
         margin-top:5px;
         margin-left: 35%;
-        font-size: 50px;
+        font-size: 60px;
     }
     .passwordinput{
-        margin-top:5px;
+        margin-top:15px;
         margin-left: 35%;
     }
     .login{
+        font-size: 30px;
         margin-left:35%;
         margin-top: 20px;
     }
     .return{
+        font-size: 30px;
         margin-left:35%;
         margin-top: 20px;
     }
     .namein{
         text-align: center;
         margin-top: 5px;
-        font-size: 20px;
+        font-size: 30px;
         color:red;
     }
 
@@ -612,7 +778,7 @@ table th, table td {
         margin-top: 20px;
         margin-left: 20%;
         margin-right: 20%;
-        font-size: 30px;
+        font-size: 40px;
         color: #364e96;/*文字色*/
         padding: 2px 0;/*上下の余白*/
         border-top: solid 3px #364e96;/*上線*/
@@ -621,28 +787,34 @@ table th, table td {
 
     .matter{
         margin-left: 22%;
+        margin-right: 22%;
+        font-size: 20px;
     }
 
     .chank{
         margin-top:20px;
         margin-left: 20%;
-        font-size: 30px;
+        font-size: 40px;
         color:blue;
     }
 
     .chankcontent{
         margin-left: 22%;
+        margin-right: 22%;
+        font-size: 20px;
     }
 
     .serchPractice{
         margin-top: 20px;
         margin-left: 20%;
-        font-size: 30px;
+        font-size: 40px;
         color:blue;
     }
 
     .serchPracticeContent{
         margin-left: 22%;
+        margin-right: 22%;
+        font-size: 20px;
 
     }
 
@@ -650,7 +822,7 @@ table th, table td {
         margin-top:20px;
         margin-left: 20%;
         margin-right: 20%;
-        font-size: 30px;
+        font-size: 40px;
         color: #364e96;/*文字色*/
         padding: 2px 0;/*上下の余白*/
         border-top: solid 3px #364e96;/*上線*/
@@ -659,7 +831,9 @@ table th, table td {
 
     .useAppContent{
         margin-left: 22%;
+        margin-right: 22%;
         margin-bottom: 30px;
+        font-size: 20px;
     }
 
     .formReturn{
@@ -691,7 +865,7 @@ table th, table td {
     .global-nav li {
         float:left;
         margin: 0 20px;
-        font-size: 20px;
+        font-size: 40px;
     }
 
     .global-nav li a {
@@ -718,15 +892,62 @@ table th, table td {
         width: 100%;
         text-align:center;
     }
+
     button.change {
         font-size: 30px;
         margin-top: 2em;
         text-align: center;
+        display: inline-block;
+        text-decoration: none;
+        background: #668ad8;/*ボタン色*/
+        color: #FFF;
+        border-bottom: solid 4px #627295;
+        border-radius: 3px;
+    }
+
+    .change:active {
+        -webkit-transform: translateY(4px);
+        transform: translateY(4px);/*下に動く*/
+        box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+        border-bottom: none;
     }
 
     button.search {
         font-size:30px;
-        margin-top: 7em;
+        margin: 13em auto;
+        text-align: center;
+        display: block;
+        text-decoration: none;
+        background: #668ad8;/*ボタン色*/
+        color: #FFF;
+        border-bottom: solid 4px #627295;
+        border-radius: 3px;
+    }
+
+    .search:active{
+        -webkit-transform: translateY(4px);
+        transform: translateY(4px);/*下に動く*/
+        box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+        border-bottom: n
+    }
+
+    #save{
+        display: block;
+        margin:auto;
+        font-size: 30px;
+        margin-top: -12em;
+        text-decoration: none;
+        background: #668ad8;/*ボタン色*/
+        color: #FFF;
+        border-bottom: solid 4px #627295;
+        border-radius: 3px;
+    }
+
+    #save:active{
+        -webkit-transform: translateY(4px);
+        transform: translateY(4px);/*下に動く*/
+        box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+        border-bottom: none;
     }
 
     #la {
@@ -761,10 +982,7 @@ table th, table td {
     }
 
 
-    .search {
-        display: block;
-        margin:auto;
-    }
+
 
     .flamelist {
         text-align:center;
@@ -805,16 +1023,7 @@ table th, table td {
         /*実線 1px 黒*/
     }
 
-    #move{
-        margin-top: 1em;
-    }
 
-    #save{
-        display: block;
-
-        margin:auto;
-        font-size: 30px;
-    }
 
     .problem{
         margin-top:50px;
@@ -943,7 +1152,7 @@ table th, table td {
 
 }
 
-@media screen and (max-width:736px){
+@media screen and (max-width:500px){
     header {
         widows: 100px;
         height:150px;
@@ -1010,6 +1219,7 @@ table th, table td {
         height:200px;
         float: left;
         margin-left: 20px;
+        font-size: 10px;
     }
 
     .Output{
@@ -1017,6 +1227,7 @@ table th, table td {
         height:200px;
         float:right;
         margin-right: 20px;
+        font-size: 10px;
     }
 
     button.search{
@@ -1113,11 +1324,13 @@ table th, table td {
     .login{
         margin-left:15%;
         margin-top: 20px;
+        font-size: 20px;
     }
 
     .return{
         margin-left:15%;
         margin-top: 20px;
+        font-size: 20px;
     }
 
 
@@ -1175,6 +1388,7 @@ table th, table td {
 
     #la_change{
         margin-left: 10%;
+        font-size: 20px;
     }
 
     .problem{
@@ -1189,6 +1403,14 @@ table th, table td {
         margin-left: 10%;
         margin-right:10%;
         word-break : break-all;
+    }
+
+    .push{
+        font-size: 20px;
+    }
+
+    .next{
+        font-size: 20px;
     }
 
     .formReturn{
@@ -1218,12 +1440,12 @@ table th, table td {
     .logo2 {
         text-align: center;
         margin-top:0px;
-        font-size: 50px;
+        font-size: 45px;
     }
 
     .global-nav {
         float:right;
-        margin-top:-6.5mm;
+        margin-top:-1em;
     }
 
 
@@ -1246,7 +1468,7 @@ table th, table td {
 
     button.change{
         font-size: 20px;
-        margin-top: 15px;
+        margin-top:10px;
         text-align: center;
     }
 
@@ -1429,20 +1651,24 @@ table th, table td {
     .delete{
         font-size: 10px;
         padding: 1px 1px;
+
     }
 
     #la_change{
+        margin-top: 20px;
         margin-left: 10%;
     }
 
     .problem{
         font-size: 20px;
+        margin-top: 20px;
         margin-left: 10%;
         margin-right:10%;
         word-break : break-all;
     }
 
     #answer{
+        margin-top: 10px;
         font-size: 20px;
         margin-left: 10%;
         margin-right:10%;
