@@ -219,7 +219,6 @@ def change(request):
     return render(request,'test.html',word)
 
 
-
 #ログイン・新規登録からフォームまで戻る
 def back(request):
     return render(request,'form.html')
