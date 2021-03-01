@@ -38,6 +38,8 @@ def ip_addresses():
 
 ALLOWED_HOSTS = ip_addresses()
 
+ALLOWED_HOSTS.append("iss.edu.tama.ac.jp")
+
 # Application definition
 
 INSTALLED_APPS = [
