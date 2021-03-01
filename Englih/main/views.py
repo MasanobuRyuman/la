@@ -20,8 +20,8 @@ class Index2View(generic.TemplateView):
 #ログイン
 def confirmation(request):
     global username
-    print(request.POST['name_input'])
-    print(request.POST['password_input'])
+    #print(request.POST['name_input'])
+    #print(request.POST['password_input'])
     username=request.POST['name_input']
     userpassword=request.POST['password_input']
     alldatecount=ThirdInfoModelForm.objects.all().count()
@@ -42,12 +42,12 @@ def confirmation(request):
 #新規登録
 def registration(request):
     global username
-    print(request.POST['name_input'])
-    print(request.POST['password_input'])
+    #print(request.POST['name_input'])
+    #print(request.POST['password_input'])
     username=request.POST['name_input']
     userpassword=request.POST['password_input']
     alldatecount=ThirdInfoModelForm.objects.all().count()
-    print(alldatecount)
+    #print(alldatecount)
     if (alldatecount==0):
         print("なにも入っていない")
         addDate=ThirdInfoModelForm(name=username,password=userpassword)
@@ -97,7 +97,7 @@ def test(request):
         return render(request,'review.html',answer)
     quantity=random.randint(1,number)
     outputDate=SecondInfoModelForm.objects.get(name=username,wordID=quantity)
-    print(outputDate.eng)
+    #print(outputDate.eng)
     word={
         'japanese':outputDate.jan,
         'englih':outputDate.eng,
@@ -149,7 +149,7 @@ def exercise(request):
 
 #保存ボタンが押されたら
 def move(request):
-    print("hitta")
+    #print("hitta")
     number=SecondInfoModelForm.objects.filter(name=username).count()
     addDate=SecondInfoModelForm(name=username,wordID=number+1,jan=rans_ja,eng=rans_en)
     addDate.save()
@@ -157,18 +157,18 @@ def move(request):
 
 def delete(request):
     key_name=request.POST.get("key")
-    print(key_name)
+    #print(key_name)
     SecondInfoModelForm.objects.filter(jan=key_name).delete()
 
     infodata = SecondInfoModelForm.objects.filter(name=username)
-    print(infodata)
+    #print(infodata)
     global changenum
     changenum=1
     for i in infodata:
-        print(i.jan)
+        #print(i.jan)
         i.wordID=changenum
         i.save()
-        print(i.wordID)
+        #print(i.wordID)
         changenum+=1
     header = ['番号','日本語','英語',""]
     #print("ok")
@@ -184,7 +184,7 @@ def delete(request):
 def next(request):
     number=SecondInfoModelForm.objects.filter(name=username).count()
     quantity=random.randint(1,number)
-    print(quantity)
+    #print(quantity)
     outputDate=SecondInfoModelForm.objects.get(name=username,wordID=quantity)
     if(request.POST['chan']=='ja'):
         chan="ja"
@@ -208,7 +208,7 @@ def change(request):
         chan="ja"
     number=SecondInfoModelForm.objects.filter(name=username).count()
     quantity=random.randint(1,number)
-    print(quantity)
+    #print(quantity)
     outputDate=SecondInfoModelForm.objects.filter(name=username).get(wordID=quantity)
     #print(outputDate.eng)
     word={

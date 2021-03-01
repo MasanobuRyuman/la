@@ -114,6 +114,7 @@ body {
     background-attachment: fixed;
     background-size: 100% auto;
     background-position: center top;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 header {
@@ -456,7 +457,7 @@ table th, table td {
     margin-top:20px;
     margin-left: 20%;
     font-size: 30px;
-    color:blue;
+    color: #364e96;
 }
 
 .chankcontent{
@@ -468,7 +469,7 @@ table th, table td {
     margin-top: 20px;
     margin-left: 20%;
     font-size: 30px;
-    color:blue;
+    color: #364e96;
 }
 
 .serchPracticeContent{
