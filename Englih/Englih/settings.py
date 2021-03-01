@@ -26,6 +26,15 @@ SECRET_KEY = 'xon3+vih49c4o5*k_*kw+#jsyz9clasak_1bs*n42*e$v4a$xr'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+def ip_addresses():
+    ip_list = []
+    for interface in netifaces.interfaces():
+        addrs = netifaces.ifaddresses(interface)
+        for x in (netifaces.AF_INET, netifaces.AF_INET6):
+            if x in addrs:
+                ip_list.append(addrs[x][0]['addr'])
+    return ip_list
+
 ALLOWED_HOSTS = ip_addresses()
 
 # Application definition
