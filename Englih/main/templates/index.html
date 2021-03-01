@@ -5,15 +5,21 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <title>Mylish</title>
 </head>
 
 <body>
     <header>
+        <form action="back" method="POST">
+            {% csrf_token %}
+            <p><button class="formReturn">Form画面に戻る</button></p>
+        </form>
         <div class="logo">
             <h1>Mylish</h1>
         </div>
+
         <nav>
             <ul class=global-nav>
                 <li><a href="/index">検索</a></li>
@@ -27,7 +33,7 @@
 
 
             <div class="changearea">
-                <p><button class="change"  onclick="OnButtonClick()">入れ替え</button></p>
+                <p><button class="change" onclick="OnButtonClick()">入れ替え</button></p>
             </div>
 
             {% if tolang == "ja" %}
@@ -41,18 +47,19 @@
             <form action="exercise" method="POST">
                 {% csrf_token %}
                 <div class="text">
-                    <p><textarea class="Input" cols="40" rows="10" name="text_input">{{text_input}}</textarea></p>
-                    <p><textarea id="Output" class="Output" cols="40" rows="10">{{text}}</textarea></p>
+                    <p><textarea class="Input" name="text_input">{{text_input}}</textarea></p>
+                    <p><textarea id="Output" class="Output">{{text}}</textarea></p>
                     <input id="lang" type="hidden" name="tolang" value= "{{tolang}}">
                 </div>
 
-                <button class="search" onclick="Onpush()" type="submit">検索</button>
+                <p><button class="search" onclick="Onpush()" type="submit">翻訳</button></p>
 
             </form>
             <form action="move" method="POST" id="move">
                 {% csrf_token %}
                 <button id="save" class="save" >保存</button>
             </form>
+
 
 
         </div>

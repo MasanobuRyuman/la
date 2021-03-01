@@ -109,8 +109,8 @@ body {
     margin: 0;
     padding: 0;
     line-height: 2;
-    background-image: url(image/white_00113.jpg);
-    background-repeat: no-repeat;
+
+
     background-attachment: fixed;
     background-size: 100% auto;
     background-position: center top;
@@ -129,7 +129,13 @@ header {
 
 .logo {
     text-align: center;
-    margin-top:0cm;
+    margin-top:-30px;
+    font-size: 80px;
+}
+
+.logo2 {
+    text-align: center;
+    margin-top:0px;
     font-size: 80px;
 }
 
@@ -172,46 +178,92 @@ button.change {
     font-size: 30px;
     margin-top: 2em;
     text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+}
+
+.change:active {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    border-bottom: none;
 }
 
 button.search {
     font-size:30px;
-    margin-top: 7em;
+    margin: 300px auto;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+}
+
+.search:active{
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    border-bottom: n
+}
+
+#save{
+    display: block;
+    margin:auto;
+    font-size: 30px;
+    margin-top: -280px;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+}
+
+#save:active{
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    border-bottom: none;
 }
 
 #la {
     font-size: 30px;
     float: left;
-    margin-left:10em;
+    margin-left:20%;
 }
 
 #la2 {
     font-size: 30px;
     float: right;
-    margin-right: 10em;
+    margin-right: 20%;
 }
+
 
 .text {
     clear: both;
 }
 
 .Input {
-    display:block;
-    float: left;
-    margin-left: 18em;
+    width: 290px;
+    height: 15em;
+    float:left;
+    margin-left: 10%;
 }
 
-.Output {
-    display: block;
+.Output{
+    width: 290px;
+    height: 15em;
     float: right;
-    margin-right: 18em;
+    margin-right:10%;
 }
 
-.search {
-    display: block;
 
-    margin:auto;
-}
+
 
 .flamelist {
     text-align:center;
@@ -223,18 +275,20 @@ table {
     text-align: center;
     text-decoration: none;
     margin:30px auto;
+    width:80%;
+    table-layout: fixed;
 }
 
 table th:nth-child(1){
     padding: 4px;
+    width:50px;
 }
 
-table td:last-child{
-    padding:10px;
+table th:last-child{
+    width:80px;
 }
 
 table th {/*table内のthに対して*/
-    padding: 10px 200px;
     color:white;
     background: linear-gradient(#829ebc,#225588);
 
@@ -242,6 +296,7 @@ table th {/*table内のthに対して*/
 
 table td {/*table内のtdに対して*/
     padding: 10px 0px;/*上下3pxで左右10px*/
+    word-break : break-all;
 }
 
 table th, table td {
@@ -249,27 +304,46 @@ table th, table td {
     /*実線 1px 黒*/
 }
 
-#move{
-    margin-top: 1em;
+.delete{
+    display: inline-block;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
 }
 
-#save{
-    display: block;
-
-    margin:auto;
-    font-size: 30px;
+.delete:active{
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    border-bottom: none;
 }
 
 .problem{
     margin-top:50px;
     text-align: center;
     font-size: 50px;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .push{
     display: block;
     margin:10px auto;
     font-size: 30px;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+}
+
+.push:active{
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    border-bottom: n
 }
 
 #answer{
@@ -282,12 +356,37 @@ table th, table td {
     display: block;
     margin:10px auto;
     font-size: 30px;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+}
+
+.next:active{
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    border-bottom: n
 }
 
 #la_change {
     margin-top: 50px;
     font-size:20px;
-    margin-left: 20em;
+    margin-left: 20%;
+    display: inline-block;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+}
+
+#la_change:active{
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    border-bottom: n
 }
 
 .name {
@@ -303,6 +402,7 @@ table th, table td {
     margin-top:5px;
     margin-left: 35%;
     font-size: 50px;
+
 }
 .passwordinput{
     margin-top:5px;
@@ -311,14 +411,1272 @@ table th, table td {
 .login{
     margin-left:35%;
     margin-top: 20px;
+    display: inline-block;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
 }
+
+
 .return{
     margin-left:35%;
     margin-top: 20px;
+    display: inline-block;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
 }
 .namein{
-    margin-left: 35%;
+    text-align: center;
     margin-top: 5px;
     font-size: 20px;
     color:red;
+}
+
+.Introduction{
+    margin-top: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-size: 30px;
+    color: #364e96;/*文字色*/
+    padding: 2px 0;/*上下の余白*/
+    border-top: solid 3px #364e96;/*上線*/
+    border-bottom: solid 3px #364e96;/*下線*/
+}
+
+.matter{
+    margin-left: 22%;
+}
+
+.chank{
+    margin-top:20px;
+    margin-left: 20%;
+    font-size: 30px;
+    color:blue;
+}
+
+.chankcontent{
+    margin-left: 22%;
+    margin-right: 22%;
+}
+
+.serchPractice{
+    margin-top: 20px;
+    margin-left: 20%;
+    font-size: 30px;
+    color:blue;
+}
+
+.serchPracticeContent{
+    margin-left: 22%;
+
+}
+
+.useApp{
+    margin-top:20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-size: 30px;
+    color: #364e96;/*文字色*/
+    padding: 2px 0;/*上下の余白*/
+    border-top: solid 3px #364e96;/*上線*/
+    border-bottom: solid 3px #364e96;/*下線*/
+}
+
+.useAppContent{
+    margin-left: 22%;
+    margin-right: 22%;
+    margin-bottom: 30px;
+}
+
+.formReturn{
+    display: inline-block;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-bottom: solid 4px #627295;
+    margin-left:90%;
+    font-size: 10px;
+}
+
+.formReturn:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+  border-bottom: none;
+}
+
+@media screen and (max-width:1024px){
+    header {
+        widows: 100px;;
+        height:200px;
+        margin:0 auto;
+        background-image: url(image/blue_00110.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% auto;
+        background-position: center top;
+    }
+
+    .logo {
+        text-align: center;
+        margin-top:-30px;
+        font-size: 80px;
+    }
+
+    .logo2 {
+        text-align: center;
+        margin-top: -30px;
+        font-size: 90px;
+    }
+
+    .global-nav {
+        float:right;
+        margin-top:-10mm;
+    }
+
+    .global-nav li {
+        float:left;
+        margin: 0 20px;
+        font-size: 40px;
+    }
+
+    .global-nav li a {
+        color: black;
+        text-decoration: none;
+    }
+
+    .global-nav li a:hover {
+        border-bottom: 2px solid black;
+    }
+
+    #wrap {
+        clear:both;
+        widows: 100%;
+    }
+
+    .content {
+        width: 100%;
+        margin: o auto;
+    }
+
+    .changearea {
+        margin-top: 20px;
+        width: 100%;
+        text-align:center;
+    }
+
+    button.change {
+        font-size: 40px;
+        margin-top: 2em;
+        text-align: center;
+        display: inline-block;
+        text-decoration: none;
+        background: #668ad8;/*ボタン色*/
+        color: #FFF;
+        border-bottom: solid 4px #627295;
+        border-radius: 3px;
+    }
+
+    .change:active {
+        -webkit-transform: translateY(4px);
+        transform: translateY(4px);/*下に動く*/
+        box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+        border-bottom: none;
+    }
+
+    button.search {
+        font-size:40px;
+        margin: 10em auto;
+        text-align: center;
+        display: block;
+        text-decoration: none;
+        background: #668ad8;/*ボタン色*/
+        color: #FFF;
+        border-bottom: solid 4px #627295;
+        border-radius: 3px;
+    }
+
+    .search:active{
+        -webkit-transform: translateY(4px);
+        transform: translateY(4px);/*下に動く*/
+        box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+        border-bottom: n
+    }
+
+    #save{
+        display: block;
+        margin:auto;
+        font-size: 40px;
+        margin-top: -8em;
+        text-decoration: none;
+        background: #668ad8;/*ボタン色*/
+        color: #FFF;
+        border-bottom: solid 4px #627295;
+        border-radius: 3px;
+    }
+
+    #save:active{
+        -webkit-transform: translateY(4px);
+        transform: translateY(4px);/*下に動く*/
+        box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+        border-bottom: none;
+    }
+
+    #la {
+        font-size: 30px;
+        float: left;
+        margin-left:20%;
+    }
+
+    #la2 {
+        font-size: 30px;
+        float: right;
+        margin-right: 20%;
+    }
+
+
+    .text {
+        clear: both;
+    }
+
+    .Input {
+        font-size: 20px;
+        width: 290px;
+        height: 15em;
+        float:left;
+        margin-left: 10%;
+    }
+
+    .Output{
+        font-size: 20px;
+        width: 290px;
+        height: 15em;
+        float: right;
+        margin-right:10%;
+    }
+
+
+    .search {
+        display: block;
+        margin:auto;
+    }
+
+    .flamelist {
+        text-align:center;
+        margin-top:50px;
+        font-size: 60px;
+    }
+
+    table {
+        text-align: center;
+        text-decoration: none;
+        margin:30px auto;
+        width:80%;
+        table-layout: fixed;
+    }
+
+    table th:nth-child(1){
+        padding: 4px;
+        width:50px;
+    }
+
+    table th:last-child{
+        width:80px;
+    }
+
+    table th {/*table内のthに対して*/
+        color:white;
+        background: linear-gradient(#829ebc,#225588);
+
+    }
+
+    table td {/*table内のtdに対して*/
+        padding: 10px 0px;/*上下3pxで左右10px*/
+        word-break : break-all;
+    }
+
+    table th, table td {
+        border: solid 1px black;
+        /*実線 1px 黒*/
+    }
+
+    .problem{
+        margin-top:50px;
+        text-align: center;
+        font-size: 50px;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .push{
+        display: block;
+        margin:10px auto;
+        font-size: 40px;
+    }
+
+    #answer{
+        margin-top:20px;
+        text-align: center;
+        font-size: 50px;
+    }
+
+    .next {
+        display: block;
+        margin:10px auto;
+        font-size: 40px;
+    }
+
+    #la_change {
+        margin-top: 50px;
+        font-size:40px;
+        margin-left: 20%;
+    }
+
+    .name {
+        margin-top: 2px;
+        margin-left: 35%;
+        font-size: 60px;
+    }
+    .nameinput{
+        margin-top:15px;
+        margin-left:35%;
+    }
+    .password{
+        margin-top:5px;
+        margin-left: 35%;
+        font-size: 60px;
+    }
+    .passwordinput{
+        margin-top:15px;
+        margin-left: 35%;
+    }
+    .login{
+        font-size: 30px;
+        margin-left:35%;
+        margin-top: 20px;
+    }
+    .return{
+        font-size: 30px;
+        margin-left:35%;
+        margin-top: 20px;
+    }
+    .namein{
+        text-align: center;
+        margin-top: 5px;
+        font-size: 30px;
+        color:red;
+    }
+
+    .Introduction{
+        margin-top: 20px;
+        margin-left: 20%;
+        margin-right: 20%;
+        font-size: 40px;
+        color: #364e96;/*文字色*/
+        padding: 2px 0;/*上下の余白*/
+        border-top: solid 3px #364e96;/*上線*/
+        border-bottom: solid 3px #364e96;/*下線*/
+    }
+
+    .matter{
+        margin-left: 22%;
+        margin-right: 22%;
+        font-size: 20px;
+    }
+
+    .chank{
+        margin-top:20px;
+        margin-left: 20%;
+        font-size: 40px;
+        color:blue;
+    }
+
+    .chankcontent{
+        margin-left: 22%;
+        margin-right: 22%;
+        font-size: 20px;
+    }
+
+    .serchPractice{
+        margin-top: 20px;
+        margin-left: 20%;
+        font-size: 40px;
+        color:blue;
+    }
+
+    .serchPracticeContent{
+        margin-left: 22%;
+        margin-right: 22%;
+        font-size: 20px;
+
+    }
+
+    .useApp{
+        margin-top:20px;
+        margin-left: 20%;
+        margin-right: 20%;
+        font-size: 40px;
+        color: #364e96;/*文字色*/
+        padding: 2px 0;/*上下の余白*/
+        border-top: solid 3px #364e96;/*上線*/
+        border-bottom: solid 3px #364e96;/*下線*/
+    }
+
+    .useAppContent{
+        margin-left: 22%;
+        margin-right: 22%;
+        margin-bottom: 30px;
+        font-size: 20px;
+    }
+
+    .formReturn{
+        margin-left:80%;
+        font-size: 20px;
+        margin-top: 5px;
+    }
+
+}
+
+@media screen and (max-width:770px){
+    .logo {
+        text-align: center;
+        margin-top:-30px;
+        font-size: 80px;
+    }
+
+    .logo2 {
+        text-align: center;
+        margin-top:0px;
+        font-size: 80px;
+    }
+
+    .global-nav {
+        float:right;
+        margin-top:-10mm;
+    }
+
+    .global-nav li {
+        float:left;
+        margin: 0 20px;
+        font-size: 40px;
+    }
+
+    .global-nav li a {
+        color: black;
+        text-decoration: none;
+    }
+
+    .global-nav li a:hover {
+        border-bottom: 2px solid black;
+    }
+
+    #wrap {
+        clear:both;
+        widows: 100%;
+    }
+
+    .content {
+        width: 100%;
+        margin: o auto;
+    }
+
+    .changearea {
+        margin-top: 20px;
+        width: 100%;
+        text-align:center;
+    }
+
+    button.change {
+        font-size: 30px;
+        margin-top: 2em;
+        text-align: center;
+        display: inline-block;
+        text-decoration: none;
+        background: #668ad8;/*ボタン色*/
+        color: #FFF;
+        border-bottom: solid 4px #627295;
+        border-radius: 3px;
+    }
+
+    .change:active {
+        -webkit-transform: translateY(4px);
+        transform: translateY(4px);/*下に動く*/
+        box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+        border-bottom: none;
+    }
+
+    button.search {
+        font-size:30px;
+        margin: 13em auto;
+        text-align: center;
+        display: block;
+        text-decoration: none;
+        background: #668ad8;/*ボタン色*/
+        color: #FFF;
+        border-bottom: solid 4px #627295;
+        border-radius: 3px;
+    }
+
+    .search:active{
+        -webkit-transform: translateY(4px);
+        transform: translateY(4px);/*下に動く*/
+        box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+        border-bottom: n
+    }
+
+    #save{
+        display: block;
+        margin:auto;
+        font-size: 30px;
+        margin-top: -12em;
+        text-decoration: none;
+        background: #668ad8;/*ボタン色*/
+        color: #FFF;
+        border-bottom: solid 4px #627295;
+        border-radius: 3px;
+    }
+
+    #save:active{
+        -webkit-transform: translateY(4px);
+        transform: translateY(4px);/*下に動く*/
+        box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+        border-bottom: none;
+    }
+
+    #la {
+        font-size: 30px;
+        float: left;
+        margin-left:20%;
+    }
+
+    #la2 {
+        font-size: 30px;
+        float: right;
+        margin-right: 20%;
+    }
+
+
+    .text {
+        clear: both;
+    }
+
+    .Input {
+        width: 290px;
+        height: 15em;
+        float:left;
+        margin-left: 10%;
+    }
+
+    .Output{
+        width: 290px;
+        height: 15em;
+        float: right;
+        margin-right:10%;
+    }
+
+
+
+
+    .flamelist {
+        text-align:center;
+        margin-top:50px;
+        font-size: 60px;
+    }
+
+    table {
+        text-align: center;
+        text-decoration: none;
+        margin:30px auto;
+        width:80%;
+        table-layout: fixed;
+    }
+
+    table th:nth-child(1){
+        padding: 4px;
+        width:50px;
+    }
+
+    table th:last-child{
+        width:80px;
+    }
+
+    table th {/*table内のthに対して*/
+        color:white;
+        background: linear-gradient(#829ebc,#225588);
+
+    }
+
+    table td {/*table内のtdに対して*/
+        padding: 10px 0px;/*上下3pxで左右10px*/
+        word-break : break-all;
+    }
+
+    table th, table td {
+        border: solid 1px black;
+        /*実線 1px 黒*/
+    }
+
+
+
+    .problem{
+        margin-top:50px;
+        text-align: center;
+        font-size: 50px;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .push{
+        display: block;
+        margin:10px auto;
+        font-size: 30px;
+    }
+
+    #answer{
+        margin-top:20px;
+        text-align: center;
+        font-size: 50px;
+    }
+
+    .next {
+        display: block;
+        margin:10px auto;
+        font-size: 30px;
+    }
+
+    #la_change {
+        margin-top: 50px;
+        font-size:20px;
+        margin-left: 20em;
+    }
+
+    .name {
+        margin-top: 2px;
+        margin-left: 35%;
+        font-size: 50px;
+    }
+    .nameinput{
+        margin-top:5px;
+        margin-left:35%;
+    }
+    .password{
+        margin-top:5px;
+        margin-left: 35%;
+        font-size: 50px;
+    }
+    .passwordinput{
+        margin-top:5px;
+        margin-left: 35%;
+    }
+    .login{
+        margin-left:35%;
+        margin-top: 20px;
+    }
+    .return{
+        margin-left:35%;
+        margin-top: 20px;
+    }
+    .namein{
+        text-align: center;
+        margin-top: 5px;
+        font-size: 20px;
+        color:red;
+    }
+
+    .Introduction{
+        margin-top: 20px;
+        margin-left: 20%;
+        margin-right: 20%;
+        font-size: 30px;
+        color: #364e96;/*文字色*/
+        padding: 2px 0;/*上下の余白*/
+        border-top: solid 3px #364e96;/*上線*/
+        border-bottom: solid 3px #364e96;/*下線*/
+    }
+
+    .matter{
+        margin-left: 22%;
+    }
+
+    .chank{
+        margin-top:20px;
+        margin-left: 20%;
+        font-size: 30px;
+        color:blue;
+    }
+
+    .chankcontent{
+        margin-left: 22%;
+    }
+
+    .serchPractice{
+        margin-top: 20px;
+        margin-left: 20%;
+        font-size: 30px;
+        color:blue;
+    }
+
+    .serchPracticeContent{
+        margin-left: 22%;
+
+    }
+
+    .useApp{
+        margin-top:20px;
+        margin-left: 20%;
+        margin-right: 20%;
+        font-size: 30px;
+        color: #364e96;/*文字色*/
+        padding: 2px 0;/*上下の余白*/
+        border-top: solid 3px #364e96;/*上線*/
+        border-bottom: solid 3px #364e96;/*下線*/
+    }
+
+    .useAppContent{
+        margin-left: 22%;
+        margin-bottom: 30px;
+    }
+
+    .formReturn{
+        margin-left:75%;
+        font-size: 20px;
+        margin-top: 5px;
+    }
+
+}
+
+@media screen and (max-width:500px){
+    header {
+        widows: 100px;
+        height:150px;
+        margin:0 auto;
+        background-image: url(image/blue_00110.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% auto;
+        background-position: center top;
+    }
+
+    .logo {
+        text-align: center;
+        margin-top:-35px;
+        font-size: 70px;
+    }
+
+    .logo2 {
+        text-align: center;
+        margin-top:0px;
+        font-size: 70px;
+    }
+
+    .global-nav {
+        float:right;
+        margin-top:-6.5mm;
+    }
+
+    .global-nav li {
+        float:left;
+        margin: 0 10px;
+        font-size: 20px;
+    }
+
+    .global-nav li a {
+        color: black;
+        text-decoration: none;
+    }
+
+    .global-nav li a:hover {
+        border-bottom: 2px solid black;
+    }
+
+
+    button.change{
+        font-size: 20px;
+        margin-top: 2em;
+        text-align: center;
+    }
+
+    #la {
+        font-size: 20px;
+        float: left;
+        margin-left:20%;
+    }
+    #la2{
+        font-size: 20px;
+        float: right;
+        margin-right: 20%;
+    }
+
+    .Input{
+        width:150px;
+        height:200px;
+        float: left;
+        margin-left: 20px;
+        font-size: 10px;
+    }
+
+    .Output{
+        width:150px;
+        height:200px;
+        float:right;
+        margin-right: 20px;
+        font-size: 10px;
+    }
+
+    button.search{
+        font-size:20px;
+        margin-top: 13em;
+    }
+
+    #save{
+        font-size: 20px;
+    }
+
+    /*from画面*/
+    .Introduction{
+        font-size: 20px;
+        margin-left: 15%;
+        margin-right: 15%;
+        color: #364e96;/*文字色*/
+        padding: 1px 0;/*上下の余白*/
+        border-top: solid 3px #364e96;/*上線*/
+        border-bottom: solid 3px #364e96;/*下線*/
+    }
+
+    .matter{
+        font-size: 10px;
+        margin-left: 17%;
+        margin-right: 17%;
+    }
+
+    .chank{
+        font-size: 20px;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    .chankcontent{
+        font-size: 10px;
+        margin-left: 17%;
+        margin-right: 17%;
+    }
+
+    .serchPractice{
+        font-size: 20px;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    .serchPracticeContent{
+        font-size: 10px;
+        margin-left: 17%;
+        margin-right:17%;
+    }
+
+    .useApp{
+        font-size: 20px;
+        margin-left: 15%;
+        margin-right: 15%;
+        color: #364e96;/*文字色*/
+        padding: 1px 0;/*上下の余白*/
+        border-top: solid 3px #364e96;/*上線*/
+        border-bottom: solid 3px #364e96;/*下線*/
+    }
+
+    .useAppContent{
+        font-size: 10px;
+        margin-left: 17%;
+        margin-right:17%;
+    }
+
+    /*login画面*/
+    .name {
+        margin-top: 2px;
+        margin-left: 15%;
+        font-size: 50px;
+    }
+
+    .name{
+        margin-left: 15%;
+        font-size: 30px;
+    }
+
+    .nameinput{
+        margin-left: 15%;
+    }
+
+    .password{
+        margin-top:5px;
+        margin-left: 15%;
+        font-size: 30px;
+    }
+    .passwordinput{
+        margin-top:5px;
+        margin-left: 15%;
+    }
+    .login{
+        margin-left:15%;
+        margin-top: 20px;
+        font-size: 20px;
+    }
+
+    .return{
+        margin-left:15%;
+        margin-top: 20px;
+        font-size: 20px;
+    }
+
+
+
+    .flamelist{
+        font-size: 30px;
+        margin-top:5%;
+    }
+
+    table {
+        text-align: center;
+        text-decoration: none;
+        margin:2px auto;
+        width:90%;
+        table-layout: fixed;
+    }
+
+    table th:nth-child(1){
+        padding:5px 2px;
+    }
+
+
+
+    table th {/*table内のthに対して*/
+        padding:2px;
+        font-size: 10px;
+        color:white;
+        background: linear-gradient(#829ebc,#225588);
+
+    }
+
+    table td {/*table内のtdに対して*/
+        font-size:10px;/*上下3pxで左右10px*/
+        word-break : break-all;
+    }
+
+    table th, table td {
+        border: solid 1px black;
+        /*実線 1px 黒*/
+    }
+
+    table th:nth-child(1){
+        padding: 4px;
+        width:20px;
+    }
+
+    table th:last-child{
+        width:40px;
+    }
+
+    .delete{
+        font-size: 10px;
+        padding: 1px 1px;
+    }
+
+    #la_change{
+        margin-left: 10%;
+        font-size: 20px;
+    }
+
+    .problem{
+        font-size: 20px;
+        margin-left: 10%;
+        margin-right:10%;
+        word-break : break-all;
+    }
+
+    #answer{
+        font-size: 20px;
+        margin-left: 10%;
+        margin-right:10%;
+        word-break : break-all;
+    }
+
+    .push{
+        font-size: 20px;
+    }
+
+    .next{
+        font-size: 20px;
+    }
+
+    .formReturn{
+        margin-left: 75%;
+        font-size: 2px;
+    }
+
+}
+@media screen and (max-width:360px){
+    header {
+        widows: 100px;
+        height:100px;
+        margin:0 auto;
+        background-image: url(image/blue_00110.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% auto;
+        background-position: center top;
+    }
+
+    .logo {
+        text-align: center;
+        margin-top:-30px;
+        font-size: 45px;
+    }
+
+    .logo2 {
+        text-align: center;
+        margin-top:0px;
+        font-size: 45px;
+    }
+
+    .global-nav {
+        float:right;
+        margin-top:-1em;
+    }
+
+
+
+    .global-nav li {
+        float:left;
+        margin: 0 10px;
+        font-size: 15px;
+    }
+
+    .global-nav li a {
+        color: black;
+        text-decoration: none;
+    }
+
+    .global-nav li a:hover {
+        border-bottom: 2px solid black;
+    }
+
+
+    button.change{
+        font-size: 20px;
+        margin-top:10px;
+        text-align: center;
+    }
+
+    #la {
+        font-size: 20px;
+        float: left;
+        margin-left:20%;
+    }
+    #la2{
+        font-size: 20px;
+        float: right;
+        margin-right: 20%;
+    }
+
+    .Input{
+        width:110px;
+        height:160px;
+        float: left;
+        margin-left: 20px;
+    }
+
+    .Output{
+        width:110px;
+        height:160px;
+        float:right;
+        margin-right: 20px;
+    }
+
+    button.search{
+        font-size:20px;
+        margin-top: 200px;
+    }
+
+    #save{
+        font-size: 20px;
+    }
+
+    /*from画面*/
+    .Introduction{
+        font-size: 20px;
+        margin-left: 15%;
+        margin-right: 15%;
+        color: #364e96;/*文字色*/
+        padding: 1px 0;/*上下の余白*/
+        border-top: solid 3px #364e96;/*上線*/
+        border-bottom: solid 3px #364e96;/*下線*/
+    }
+
+    .matter{
+        font-size: 10px;
+        margin-left: 17%;
+        margin-right: 17%;
+    }
+
+    .chank{
+        font-size: 20px;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    .chankcontent{
+        font-size: 10px;
+        margin-left: 17%;
+        margin-right: 17%;
+    }
+
+    .serchPractice{
+        font-size: 20px;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    .serchPracticeContent{
+        font-size: 10px;
+        margin-left: 17%;
+        margin-right:17%;
+    }
+
+    .useApp{
+        font-size: 20px;
+        margin-left: 15%;
+        margin-right: 15%;
+        color: #364e96;/*文字色*/
+        padding: 1px 0;/*上下の余白*/
+        border-top: solid 3px #364e96;/*上線*/
+        border-bottom: solid 3px #364e96;/*下線*/
+    }
+
+    .useAppContent{
+        font-size: 10px;
+        margin-left: 17%;
+        margin-right:17%;
+    }
+
+    /*login画面*/
+    .name {
+        margin-top: 2px;
+        margin-left: 15%;
+        font-size: 50px;
+    }
+
+    .name{
+        margin-left: 15%;
+        font-size: 30px;
+    }
+
+    .nameinput{
+        width: 200px;
+        margin-left: 15%;
+    }
+
+    .password{
+        margin-top:5px;
+        margin-left: 15%;
+        font-size: 30px;
+    }
+    .passwordinput{
+        width: 200px;
+        margin-top:5px;
+        margin-left: 15%;
+    }
+    .login{
+        margin-left:15%;
+        margin-top: 20px;
+    }
+
+    .return{
+        margin-left:15%;
+        margin-top: 20px;
+    }
+
+
+
+    .flamelist{
+        font-size: 30px;
+        margin-top:2%;
+    }
+
+    table {
+        text-align: center;
+        text-decoration: none;
+        margin:auto;
+        width:90%;
+        table-layout: fixed;
+    }
+
+    table th:nth-child(1){
+        padding:5px 2px;
+    }
+
+
+
+    table th {/*table内のthに対して*/
+        padding:2px;
+        font-size: 10px;
+        color:white;
+        background: linear-gradient(#829ebc,#225588);
+
+    }
+
+    table td {/*table内のtdに対して*/
+        font-size:10px;/*上下3pxで左右10px*/
+        word-break : break-all;
+    }
+
+    table th, table td {
+        border: solid 1px black;
+        /*実線 1px 黒*/
+    }
+
+    table th:nth-child(1){
+        padding: 4px;
+        width:20px;
+    }
+
+    table th:last-child{
+        width:40px;
+    }
+
+    .delete{
+        font-size: 10px;
+        padding: 1px 1px;
+
+    }
+
+    #la_change{
+        margin-top: 20px;
+        margin-left: 10%;
+    }
+
+    .problem{
+        font-size: 20px;
+        margin-top: 20px;
+        margin-left: 10%;
+        margin-right:10%;
+        word-break : break-all;
+    }
+
+    #answer{
+        margin-top: 10px;
+        font-size: 20px;
+        margin-left: 10%;
+        margin-right:10%;
+        word-break : break-all;
+    }
+
+    .formReturn{
+        margin-left: 70%;
+        font-size: 1px;
+    }
 }
